@@ -24,7 +24,7 @@ const Nav = ({ containerStyles, linkStyles, underlineStyles }) => {
             className={`capitalize ${linkStyles}`}
           >
             {link.path === path && (
-              <motion.apan
+              <motion.span
                 initial={{ y: "-100%" }}
                 animate={{ y: 0 }}
                 transition={{ type: "tween" }}
