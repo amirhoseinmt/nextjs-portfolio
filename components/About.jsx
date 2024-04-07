@@ -8,7 +8,7 @@ import {
   HomeIcon,
   PhoneCall,
   GraduationCap,
-  Calender,
+  Calendar,
   BriefCase,
 } from "lucide-react";
 
@@ -26,7 +26,7 @@ const infoData = [
     text: "amirhoseinmirtalemi@gmail.com",
   },
   {
-    icon: <Calender size={20} />,
+    icon: <Calendar size={20} />,
     text: "Born on 2 Apr, 2002",
   },
   {
@@ -130,6 +130,65 @@ const About = () => {
         <h2 className="section-title mb-8 xl:mb-16 text-center mx-auto">
           About me
         </h2>
+        <div className="flex flex-col xl:flex-row">
+          {/* image */}
+          <div className="hidden xl:flex flex-1 relative">
+            <DevImg
+              containerStyles="bg-about_shape_light dark:bg-about_shape_dark w-[505px] h-[505px] bg-no-repeat relative"
+              imgSrc="/about/developer.png"
+            />
+          </div>
+          {/* tabs */}
+          <div className="flex-1">
+            <Tabs>
+              <TabsList className="w-full grid xl:grid-cols-3 xl:max-w-[520px] xl:border dark:border-none">
+                <TabsTrigger className="w-[162px] xl:w-auto" value="personal">
+                  Personal Info
+                </TabsTrigger>
+                <TabsTrigger
+                  className="w-[162px] xl:w-auto"
+                  value="qualification"
+                >
+                  Qualification
+                </TabsTrigger>
+                <TabsTrigger className="w-[162px] xl:w-auto" value="skills">
+                  Skills
+                </TabsTrigger>
+              </TabsList>
+              {/* tabs content */}
+              <div className="text-lg mt-12 xl:mt-8">
+                {/* personal */}
+                <TabsContent value="personal">
+                  <div className="text-center xl:text-left">
+                    <h3 className="h3 mb-4">
+                      Unmatched Service Quality for Over 10 Years
+                    </h3>
+                    <p className="subtitle max-w-xl mx-auto xl:mx-0">
+                      I specialize in crafting intvitive websites with
+                      cutting-edge technology, delivering dynamic and engaging
+                      user experience.
+                    </p>
+                    {/* icons */}
+                    <div>
+                      {infoData.map((item, index) => {
+                        return (
+                          <div key={index}>
+                            <div>{item.icon}</div>
+                            <div>{item.text}</div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </TabsContent>
+                <TabsContent value="qualification">
+                  qualification info
+                </TabsContent>
+                <TabsContent value="skills">skills info</TabsContent>
+              </div>
+            </Tabs>
+          </div>
+        </div>
       </div>
     </section>
   );
