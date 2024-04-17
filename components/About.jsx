@@ -45,19 +45,19 @@ const qualificationData = [
     data: [
       {
         university: "Azad, Rasht",
-        qualification: "Comouter engineering student",
+        qualification: "Computer engineering student",
         years: "1399 - 1403",
       },
-      {
-        university: "Another, Rasht",
-        qualification: "Comouter engineering student",
-        years: "1399 - 1403",
-      },
-      {
-        university: "Another, Rasht",
-        qualification: "Comouter engineering student",
-        years: "1399 - 1403",
-      },
+      // {
+      //   university: "Another, Rasht",
+      //   qualification: "Comouter engineering student",
+      //   years: "1399 - 1403",
+      // },
+      // {
+      //   university: "Another, Rasht",
+      //   qualification: "Comouter engineering student",
+      //   years: "1399 - 1403",
+      // },
     ],
   },
   {
@@ -140,7 +140,7 @@ const About = () => {
           </div>
           {/* tabs */}
           <div className="flex-1">
-            <Tabs>
+            <Tabs defaultValue="personal" >
               <TabsList className="w-full grid xl:grid-cols-3 xl:max-w-[520px] xl:border dark:border-none">
                 <TabsTrigger className="w-[162px] xl:w-auto" value="personal">
                   Personal Info
@@ -173,7 +173,7 @@ const About = () => {
                       {infoData.map((item, index) => {
                         return (
                           <div
-                            className="flex items-center gap-x-4 mx-auto xl:mx-6"
+                            className="flex items-center gap-x-4 mx-auto xl:mx-6 hover:grayscale"
                             key={index}
                           >
                             <div className="text-primary">{item.icon}</div>
@@ -303,7 +303,7 @@ const About = () => {
                       </h4>
                       <div className="border-b border-border mb-4"></div>
                       {/* tools list */}
-                      <div className="flex gap-x-8 justify-center xl:justify-start">
+                      <div className="flex gap-x-8 justify-center xl:justify-start grayscale">
                         {getData(skillData, "tools").data.map((item, index) => {
                           const { imgPath } = item;
                           return (
